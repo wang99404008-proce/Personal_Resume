@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # 如果你的 GitHub 預設分支叫 master，請改成 master
+
+media_folder: "images" # 圖片上傳後的儲存位置
+public_folder: "/images"
+
+collections:
+  - name: "resume"
+    label: "履歷資料"
+    folder: "data" # 資料會以 json 格式存在 data 資料夾中
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "姓名", name: "name", widget: "string" }
+      - { label: "現任職稱", name: "title", widget: "string" }
+      - { label: "個人簡介", name: "bio", widget: "text" }
